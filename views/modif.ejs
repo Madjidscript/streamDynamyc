@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/modif.css" />
+  </head>
+  <body>
+    <form class="card" action="/profil" method="post">
+      <div class="croix">
+        <a href="/index2"
+          ><img
+            src="/images/ferme1.png"
+            alt=""
+            style="filter: invert(); width: 40px; height: 40px"
+        /></a>
+      </div>
+      <div class="cards">
+        <img src="/images/profile.svg" alt="" style="margin-bottom: 20px" />
+        <p style="margin-bottom: 30px" class="pp">
+          <img
+            src="/images/372902_user_name_round_username_linecon_icon.png"
+            alt=""
+          />
+          <input type="text" name="name" id="name" placeholder="  Name" required />
+        </p>
+        <p style="margin-bottom: 30px" class="pp">
+          <img src="/images/3669350_email_ic_icon.png" alt="" />
+          <input type="email" name="email" id="email" placeholder="  E-mail" required />
+        </p>
+        <p style="margin-bottom: 30px" class="pp">
+          <img src="/images/2639882_password_icon.png" alt="" />
+          <input
+            type="password"
+            name="password"
+            id="Password"
+            placeholder="  Password"
+            required
+          />
+        </p>
+        
+        <p style="margin-top: 30px">
+          <input class="btn" type="submit" value="Modifier" />
+        </p>
+      </div>
+    </form>
+  </body>
+</html>

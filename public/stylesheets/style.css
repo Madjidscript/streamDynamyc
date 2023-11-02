@@ -1,0 +1,308 @@
+body {
+}
+.container {
+  width: 95%;
+}
+.section1 {
+  width: 100%;
+  height: 550px;
+  /* background-color: red; */
+  overflow: hidden;
+}
+.section1 .box {
+  display: flex;
+  animation: papa 15s infinite ease-in-out;
+}
+.section1 .box .card {
+  width: 100%;
+  height: 850px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* padding: 140px 370px; */
+}
+.card p {
+  width: 700px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 130px;
+  margin-bottom: 8px;
+  /* white-space: wrap; */
+  color: white;
+  animation: text 1s linear 0s 1 normal none;
+}
+.card h5 {
+  font-size: 20px;
+  width: 400px;
+}
+
+@keyframes text {
+  0% {
+    letter-spacing: 1em;
+    transform: translateY(300px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+#card1 {
+  background-image: url(../image/mecca_muslim.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+#card2 {
+  background-image: url(../image/mosque.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+#card3 {
+  background-image: url(../image/al-aqsa-excalier.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+#card4 {
+  background-image: url(../image/mecca_muslim.jpeg);
+  background-size: cover;
+  background-position: center center;
+}
+
+@keyframes papa {
+  0%,
+  25% {
+    transform: translateX(0px);
+  }
+  35%,
+  60% {
+    transform: translateX(-100%);
+  }
+  70%,
+  95% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+/* debut section2 */
+.section2 {
+  width: 100%;
+  height: auto;
+  /* background-color: yellow; */
+  display: block;
+  margin-bottom: 30px;
+}
+.box1 {
+  width: 100% !important;
+  height: auto;
+  border-radius: 30px;
+  margin-top: 20px;
+  /* background-color: red; */
+  position: relative;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.box1 .card1 {
+  width: 225px;
+  height: 250px;
+  margin-left: 30px;
+  background-position: center center;
+  background-size: cover !important;
+  flex-shrink: none;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: block;
+  overflow: hidden;
+  align-items: center;
+  animation: pp 5s linear 0s 1 normal none;
+  border: 4px solid #31af36;
+  color: white;
+}
+@keyframes pp {
+  0% {
+    height: 0;
+  }
+}
+
+.icon {
+  text-align: center;
+  width: 80%;
+  height: 100%;
+  justify-content: center;
+  padding: 30%;
+}
+
+.box1 .card1:hover {
+  transform: scale(1.1) !important;
+}
+.box1 .card1 p {
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1114px) {
+  .card p {
+    width: 600px;
+  }
+  .box1 {
+    padding: 8% 11%;
+  }
+  .papa .card1 {
+    width: 250px;
+  }
+
+  /* .pop::before {
+    display: none;
+  } */
+  .section2 .container .content {
+    margin-bottom: 50px;
+    margin-left: 1rem;
+  }
+
+  .section2 .container {
+    display: flex;
+    flex-wrap: wrap !important;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .card p {
+    width: 275px;
+    font-size: 25px;
+  }
+  .papa .card1 {
+    width: 250px;
+    margin-left: none;
+  }
+  .card h5 {
+    font-size: 17px;
+    width: 300px;
+  }
+  .box1 {
+    padding-top: 10%;
+  }
+  .papa {
+    margin: 0px auto;
+  }
+  .section2 .container {
+    display: block;
+  }
+  .section2 .container .content {
+    margin-bottom: 100px;
+  }
+}
+.section2 .box1 p {
+  background-color: #31af36;
+}
+
+.info {
+  text-align: center;
+  color: #31af36;
+}
+.section2 {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: relative;
+  width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: wrap;
+  padding: 30px;
+  margin: 0px auto;
+}
+.container .content {
+  position: relative;
+  max-width: 300px;
+  height: 150px;
+  background-color: #31af36;
+  margin: 30px auto;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 50px rgba(0, 0, 0, 0.5);
+  transition: 0.4s ease-in-out;
+}
+
+.container .photo1 {
+  background-image: url(../image/yousouf.jpg);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center center;
+}
+.container .photo2 {
+  background-image: url(../image/medi9.PNG);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center center;
+}
+.container .photo3 {
+  background-image: url(../image/ani1.PNG);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center center;
+}
+.container .photo4 {
+  background-image: url(../image/fil5.PNG);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center center;
+}
+.container .photo5 {
+  background-image: url(../image/medi5.PNG);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center center;
+}
+.container .photo6 {
+  background-image: url(../image/ani4.PNG);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center center;
+}
+.container .content:hover {
+  height: 300px;
+}
+
+.container .content .cont-image {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  top: -60px;
+  left: 12px;
+  z-index: 1;
+  box-shadow: 0px 3px 50px rgba(0, 0, 0, 0.5);
+}
+.container .content .cont-image img {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.container .content .text {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+  color: white;
+}
+.container .content:hover .text {
+  opacity: 1;
+  visibility: visible;
+  margin-top: -50px;
+}

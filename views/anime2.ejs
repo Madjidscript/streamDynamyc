@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/anime2.css" />
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('partials/hearder2') %>
+    <!-- fin bar de navigation -->
+
+    <!-- debut de la premiere partie -->
+    <div class="section1">
+      <div class="card"></div>
+    </div>
+
+    <div class="container">
+      <h1>video gallery</h1>
+      <input type="checkbox" id="click" />
+      <input type="checkbox" id="click1" />
+      <input type="checkbox" id="click2" />
+      <input type="checkbox" id="click3" />
+      <input type="checkbox" id="click4" />
+      <input type="checkbox" id="click5" />
+      <input type="checkbox" id="click6" />
+      <input type="checkbox" id="click7" />
+      <input type="checkbox" id="click8" />
+
+      <div class="video-container">
+        <label for="click" class="video">
+          <img src="/images/ani1.PNG" alt="" />
+        </label>
+        <label for="click1" class="video">
+          <img src="/images/ani2.PNG" alt="" />
+        </label>
+        <label for="click2" class="video">
+          <img src="/images/ani3.PNG" alt="" />
+        </label>
+        <label for="click3" class="video">
+          <img src="/images/ani4.PNG" alt="" />
+        </label>
+        <label for="click4" class="video">
+          <img src="/images/ani5.PNG" alt="" />
+        </label>
+        <label for="click5" class="video">
+          <img src="/images/ani6.PNG" alt="" />
+        </label>
+        <label for="click6" class="video">
+          <img src="/images/ani7.PNG" alt="" />
+        </label>
+        <label for="click7" class="video">
+          <img src="/images/ani8.PNG" alt="" />
+        </label>
+        <label for="click8" class="video">
+          <img src="/images/ani9.PNG" alt="" />
+        </label>
+      </div>
+
+      <div class="popup-video">
+        <video src="../video/ani1.mp4" controls muted autoplay></video>
+        <label class="yo" for="click">&times;</label>
+      </div>
+
+      <div class="popup-video1">
+        <video src="../video/ani2.mp4" controls muted autoplay></video>
+        <label class="yo" for="click1">&times;</label>
+      </div>
+
+      <div class="popup-video2">
+        <video src="../video/ani3.mp4" controls muted autoplay></video>
+        <label class="yo" for="click2">&times;</label>
+      </div>
+
+      <div class="popup-video3">
+        <video src="../video/ani4.mp4" controls muted autoplay></video>
+        <label class="yo" for="click3">&times;</label>
+      </div>
+      <div class="popup-video4">
+        <video src="../video/ani5.mp4" controls muted autoplay></video>
+        <label class="yo" for="click4">&times;</label>
+      </div>
+      <div class="popup-video5">
+        <video src="../video/ani6.mp4" controls muted autoplay></video>
+        <label class="yo" for="click5">&times;</label>
+      </div>
+      <div class="popup-video6">
+        <video src="../video/ani7.mp4" controls muted autoplay></video>
+        <label class="yo" for="click6">&times;</label>
+      </div>
+      <div class="popup-video7">
+        <video src="../video/ani8.mp4" controls muted autoplay></video>
+        <label class="yo" for="click7">&times;</label>
+      </div>
+      <div class="popup-video8">
+        <video src="../video/ani9.mp4" controls muted autoplay></video>
+        <label class="yo" for="click8">&times;</label>
+      </div>
+    </div>
+    <!-- fin de la premiere partie -->
+
+    <!-- debut footer -->
+
+    <%- include('partials/footer') %>
+    <!-- fin footer -->
+  </body>
+</html>

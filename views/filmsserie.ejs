@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/filmsserie.css" />
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include('partials/hearder1') %>
+    <!-- fin bar de navigation -->
+
+    <!-- debut de la premiere partie -->
+    <div class="section1">
+      <div class="card"></div>
+    </div>
+
+    <div class="container">
+      <h1>video gallery</h1>
+      <input type="checkbox" id="click" />
+      <input type="checkbox" id="click1" />
+      <input type="checkbox" id="click2" />
+      <input type="checkbox" id="click3" />
+      <input type="checkbox" id="click4" />
+      <input type="checkbox" id="click5" />
+
+      <div class="video-container">
+        <label for="click" class="video">
+          <img src="/images/fil8.PNG" alt="" />
+        </label>
+        <label for="click1" class="video">
+          <img src="/images/fil1.PNG" alt="" />
+        </label>
+        <label for="click2" class="video">
+          <img src="/images/fil4.PNG" alt="" />
+        </label>
+        <label for="click3" class="video">
+          <img src="/images/fil3.PNG" alt="" />
+        </label>
+        <label for="click4" class="video">
+          <img src="/images/fil9.PNG" alt="" />
+        </label>
+        <label for="click5" class="video">
+          <img src="/images/fil2.PNG" alt="" />
+        </label>
+      </div>
+
+      <div class="popup-video">
+        <video
+          src="../video/fil8.mp4"
+          controls
+          muted
+          controlslist=" nodownload nofullscreen "
+        ></video>
+
+        <label class="yo" for="click">&times;</label>
+      </div>
+
+      <div class="popup-video1">
+        <video
+          src="../video/fil1.mp4"
+          controls
+          muted
+          controlslist=" nodownload nofullscreen "
+        ></video>
+        <label class="yo" for="click1">&times;</label>
+      </div>
+
+      <div class="popup-video2">
+        <video
+          src="../video/fil4.mp4"
+          controls
+          muted
+          controlslist=" nodownload nofullscreen "
+        ></video>
+        <label class="yo" for="click2">&times;</label>
+      </div>
+
+      <div class="popup-video3">
+        <video
+          src="../video/fil3.mp4"
+          controls
+          muted
+          controlslist=" nodownload nofullscreen "
+        ></video>
+        <label class="yo" for="click3">&times;</label>
+      </div>
+      <div class="popup-video4">
+        <video
+          src="../video/fil9.mp4"
+          controls
+          muted
+          controlslist=" nodownload nofullscreen "
+        ></video>
+        <label class="yo" for="click4">&times;</label>
+      </div>
+      <div class="popup-video5">
+        <video
+          src="../video/fil2.mp4"
+          controls
+          muted
+          controlslist=" nodownload nofullscreen "
+        ></video>
+        <label class="yo" for="click5">&times;</label>
+      </div>
+    </div>
+    <!-- fin de la premiere partie -->
+    <!-- debut footer -->
+    <%- include('partials/footer') %>
+    <!-- fin footer -->
+  </body>
+</html>
