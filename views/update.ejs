@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/stylesheets/inscription.css" />
   </head>
   <body>
-    <form class="card" method="post" action="/inscription">
+    <form class="card" method="post" action="/update">
 
       <div class="croix">
-        <a href="/index"
+        <a href="/utilisateur"
           ><img
             src="/images/ferme1.png"
             alt=""
@@ -18,26 +18,22 @@
         /></a>
       </div>
       <div class="cards">
-        <h1>Inscription</h1>
+        <h1>Ajourt Article</h1>
         <p style="margin-bottom: 30px" class="pp">
-          <img
-            src="/images/372902_user_name_round_username_linecon_icon.png"
-            alt=""
-          />
-          <input type="text" name="name" id="name" placeholder="Name" required />
+          
+          <input type="file" name="image" id="image" value="" placeholder=" entrer l'image" required />
         </p>
         <p style="margin-bottom: 30px" class="pp">
-          <img src="/images/3669350_email_ic_icon.png" alt="" />
-          <input type="email" name="email" id="email" placeholder="E-mail" required />
+         
+          <input type="file" name="video" id="video" value="" placeholder="entrer la video" required />
         </p>
         <p style="margin-bottom: 10px" class="pp">
-          <img src="/images/2639882_password_icon.png" alt="" />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            required
+          
+          <select name="categorie" id="categorie">
+            <option value="histoire">histoire</option>
+            <option value="meditation">meditation</option>
+            <option value="histoire">animé</option>
+          </select>
           />
         </p>
         <span><input type="checkbox" /></span>

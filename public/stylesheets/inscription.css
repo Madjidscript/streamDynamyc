@@ -11,6 +11,12 @@
   align-items: center;
   justify-content: center;
 }
+.card .croix img {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  margin-bottom: 30px !important;
+}
 .card .cards {
   width: 450px;
   height: auto;
@@ -52,7 +58,7 @@
 .card .cards span a {
   text-decoration: none;
 }
-.card .cards p a input {
+.card .cards p .btn {
   width: 45%;
   background-color: black;
   color: white;
