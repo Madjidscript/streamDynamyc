@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title></title>
     <link rel="stylesheet" href="/stylesheets/modif.css" />
   </head>
   <body>
-    <form class="card" action="/profil" method="post">
+    <form class="card" action="/editer/<%= users._id %>" method="post">
       <div class="croix">
         <a href="/index2"
           ><img
@@ -23,11 +23,11 @@
             src="/images/372902_user_name_round_username_linecon_icon.png"
             alt=""
           />
-          <input type="text" name="name" id="name" placeholder="  Name" required />
+          <input type="text" name="name" id="name" value="<%=users.name%>" placeholder="  Name" required />
         </p>
         <p style="margin-bottom: 30px" class="pp">
           <img src="/images/3669350_email_ic_icon.png" alt="" />
-          <input type="email" name="email" id="email" placeholder="  E-mail" required />
+          <input type="email" name="email" id="email" value="<%=users.email%>" placeholder="  E-mail" required />
         </p>
         <p style="margin-bottom: 30px" class="pp">
           <img src="/images/2639882_password_icon.png" alt="" />
@@ -35,6 +35,7 @@
             type="password"
             name="password"
             id="Password"
+            value=" <%=users.password%>"
             placeholder="  Password"
             required
           />

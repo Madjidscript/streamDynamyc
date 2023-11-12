@@ -53,22 +53,22 @@ body {
 }
 
 #card1 {
-  background-image: url(../image/mecca_muslim.jpeg);
+  background-image: url(/images/mecca_muslim.jpeg);
   background-size: cover;
   background-position: center center;
 }
 #card2 {
-  background-image: url(../image/mosque.jpg);
+  background-image: url(/images/mosque.jpg);
   background-size: cover;
   background-position: center center;
 }
 #card3 {
-  background-image: url(../image/al-aqsa-excalier.jpg);
+  background-image: url(/images/al-aqsa-excalier.jpg);
   background-size: cover;
   background-position: center center;
 }
 #card4 {
-  background-image: url(../image/mecca_muslim.jpeg);
+  background-image: url(/images/mecca_muslim.jpeg);
   background-size: cover;
   background-position: center center;
 }
@@ -238,37 +238,37 @@ body {
 }
 
 .container .photo1 {
-  background-image: url(../image/yousouf.jpg);
+  background-image: url(/images/yousouf.jpg);
   background-size: cover;
   object-fit: cover;
   background-position: center center;
 }
 .container .photo2 {
-  background-image: url(../image/medi9.PNG);
+  background-image: url(/images/medi9.PNG);
   background-size: cover;
   object-fit: cover;
   background-position: center center;
 }
 .container .photo3 {
-  background-image: url(../image/ani1.PNG);
+  background-image: url(/images/ani1.PNG);
   background-size: cover;
   object-fit: cover;
   background-position: center center;
 }
 .container .photo4 {
-  background-image: url(../image/fil5.PNG);
+  background-image: url(/images/fil5.PNG);
   background-size: cover;
   object-fit: cover;
   background-position: center center;
 }
 .container .photo5 {
-  background-image: url(../image/medi5.PNG);
+  background-image: url(/images/medi5.PNG);
   background-size: cover;
   object-fit: cover;
   background-position: center center;
 }
 .container .photo6 {
-  background-image: url(../image/ani4.PNG);
+  background-image: url(/images/ani4.PNG);
   background-size: cover;
   object-fit: cover;
   background-position: center center;

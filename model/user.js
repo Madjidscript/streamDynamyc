@@ -15,6 +15,9 @@ email:{
 password:{
     type:String,
     required:true,
+},
+statut:{
+    type:String,
 }
 })
 module.exports = User

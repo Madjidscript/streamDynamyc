@@ -1,7 +1,11 @@
  const User = require("../model/user");
+ const Admin = require('../model/admin')
  const bcrypt = require("bcrypt")
 const {response,request}= require('express');
-const Admin = require("../model/admin");
+const jsonwt = require("../middlewares/jwtoken");
+
+
+
 
 
 
@@ -19,7 +23,8 @@ static inscriptionPost = async(req=request,res=response)=>{
         const createUser = new User({
             name:req.body.name,
             email:req.body.email,
-            password:hashPassword
+            password:hashPassword,
+            statut:req.body.statut
         })
         try {
             const saveUser = createUser.save()
@@ -34,10 +39,7 @@ static connexion = (req=request,res= response)=>{ return res.render('connexion')
 static connexionPost = async(req=request,res= response)=>{
     const email= req.body.email
     const password=req.body.password
-    const emailsAdmin = 'admin@gmail.com'
-    const passwordAdmin= 'admin23'
-    
-   
+      
 try {
     const user = await User.findOne({email})
     if (!user) {
@@ -47,37 +49,186 @@ try {
     console.log(password,"mon pass",user.password);
     if (!verifPasswor) {
     return  res.render('connexion',{message:'mots de pass incorrect'})
-    } 
+    } else if(verifPasswor){
+        const token = jsonwt.CreerToken(user._id)
+        res.cookie('streamok',token)
+        console.log("mon amo",token);
+       
+    }
         
-    if(email === emailsAdmin && password === passwordAdmin) {
+    if(user.statut ==='A') {
+        console.log("ma vie amoureuse est la")
        return res.status(200).redirect("/admin/article")
     }
     return res.redirect('/index2')
+   
     
 } catch (error) {
     console.log(error);
 }
  }
 static profil = async(req=request,res= response)=>{ 
-const userId= req.params.id
- try {
-    const user = await User.findById(userId)
-    console.log('mon utilisateur',user)
-    return res.status(201).render('modif',{users:user})
- } catch (error) {
-    console.log(error);
- }
-    
+
+    const token = req.cookies.streamok //cette partie  nous permet dappeller notre cookie qui a pour non streamok
+    const verifToken = jsonwt.VerifierToken(token)
+    console.log("ma verification",verifToken);
+      
+      const id = verifToken.id
+       console.log("je verifie",id);
+      const user =await User.findById(id).exec()
+     console.log("mon ami pour la vie",user);
+     console.log("mon vrai non",user.name);
+ 
+     return res.render('profil',{'users':user})
+     
+ 
     
 }
-static editer = (req=request,res= response)=>{ return res.render('modif',{title:'editer'})}
-static indexs = (req=request,res=response)=>{return res.render('indexs',{title:'indexs'})}
-static index2 = (req=request,res=response)=>{return res.render('index2')}
-static anime =(req=request,res=response)=>{return res.render('anime',{title:'anime'})}
-static anime2 =(req=request,res=response)=>{return res.render('anime2',{title:'anime2'})}
-static filmsserie =(req=request,res=response)=>{return res.render('filmsserie',{title:'filmsserie'})}
-static filmsserie2 =(req=request,res=response)=>{return res.render('filmsserie2',{title:'filmsserie2'})}
-static meditation =(req=request,res=response)=>{return res.render('meditation',{title:'meditation'})}
-static meditation2 =(req=request,res=response)=>{return res.render('meditation2',{title:'meditation2'})}
+static editer = async(req=request,res= response)=>{ 
+    const token = req.cookies.streamok //cette partie  nous permet dappeller notre cookie qui a pour non streamok
+    const verifToken = jsonwt.VerifierToken(token)
+    console.log("ma verification",verifToken);
+      
+      const id = verifToken.id
+       console.log("je verifie",id);
+      const user =await User.findById(id).exec()
+     console.log("mon ami pour la vie",user);
+     console.log("mon vrai non",user.name);
+ 
+     return res.render('modif',{'users':user})
+     
+ 
+}
+static editerPost = async(req=request,res= response)=>{ 
+   
+    const id =req.params.id
+    try {
+    const user = await User.findByIdAndUpdate(id,req.body,{new:true})
+    console.log("mon utilisateur a modifier",req.body)
+    if (!user) {
+      return  res.redirect("/editer/"+user.id)
+    }else{
+        return  res.redirect('/profil/'+user.id)
+    }
+    } catch (error) {
+        console.log("modification error",error);
+    }
+}
+static indexs = async(req=request,res=response)=>{
+    
+    try {
+        const article = await Admin.find().exec()
+        console.log("mon vrai article",article)
+        res.render('indexs',{"articles":article})
+    } catch (error) {
+        console.log(error);
+    }
+    
+}
+static index2 = async(req=request,res=response)=>{
+    const token = req.cookies.streamok //cette partie  nous permet dappeller notre cookie qui a pour non streamok
+   const verifToken = jsonwt.VerifierToken(token)
+   console.log("ma verification",verifToken);
+     
+     const id = verifToken.id
+      console.log("je verifie",id);
+     const user =await User.findById(id).exec()
+     
+    console.log("mon ami pour la vie",user);
+    console.log("mon vrai non",user.name);
+    const article = await Admin.find().exec()
+        console.log("mon vrai article",article)
+    
+
+    return res.render('index2',{'users':user,"articles":article})
+    
+
+
+}
+static anime =async(req=request,res=response)=>{
+    try {
+        const article = await Admin.find().exec()
+        console.log("mon vrai article",article)
+        res.render("anime",{"articles":article})
+    } catch (error) {
+        console.log(error);
+    }
+}
+static anime2 =async(req=request,res=response)=>{
+    const token = req.cookies.streamok //cette partie  nous permet dappeller notre cookie qui a pour non streamok
+    const verifToken = jsonwt.VerifierToken(token)
+    console.log("ma verification",verifToken);
+      
+      const id = verifToken.id
+       console.log("je verifie",id);
+      const user =await User.findById(id).exec()
+     console.log("mon ami pour la vie",user);
+     console.log("mon vrai non",user.name);
+     const article = await Admin.find().exec()
+     console.log("mon vrai article",article)
+     return res.render('anime2',{'users':user,"articles":article})
+     
+}
+static filmsserie =async(req=request,res=response)=>{
+    try {
+        const article = await Admin.find().exec()
+        console.log("mon vrai article",article)
+        res.render("filmsserie",{"articles":article})
+    } catch (error) {
+        console.log(error);
+    }
+}
+static filmsserie2 =async(req=request,res=response)=>{
+    const token = req.cookies.streamok //cette partie  nous permet dappeller notre cookie qui a pour non streamok
+    const verifToken = jsonwt.VerifierToken(token)
+    console.log("ma verification",verifToken);
+      
+      const id = verifToken.id
+       console.log("je verifie",id);
+      const user =await User.findById(id).exec()
+     console.log("mon ami pour la vie",user);
+     console.log("mon vrai non",user.name);
+     const article = await Admin.find().exec()
+     console.log("mon vrai article",article)
+     
+     res.render('filmsserie2',{'users':user,"articles":article})
+      
+}
+static meditation =async(req=request,res=response)=>{
+   try {
+    const article = await Admin.find().exec()
+    console.log("mon vrai article",article)
+    res.render("meditation",{"articles":article})
+   } catch (error) {
+    console.log(error);
+   }
+}
+static meditation2 =async(req=request,res=response)=>{
+    const token = req.cookies.streamok //cette partie  nous permet dappeller notre cookie qui a pour non streamok
+    const verifToken = jsonwt.VerifierToken(token)
+    console.log("ma verification",verifToken);
+      
+      const id = verifToken.id
+       console.log("je verifie",id);
+      const user =await User.findById(id).exec()
+     console.log("mon ami pour la vie",user);
+     console.log("mon vrai non",user.name);
+     const article = await Admin.find().exec()
+     console.log("mon vrai article",article)
+     
+     return res.render('meditation2',{'users':user,"articles":article})
+     
+}
+static deconnexion =(req=request,res=response)=>{
+    console.log("papapapppa");
+    res.clearCookie("streamok")
+    res.redirect('/connexion')
+}
+
+
+
+
+
+
 }
 module.exports = controllerUser

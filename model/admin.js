@@ -4,17 +4,15 @@ const validator = require('validator')
 const Admin = mongoose.model("Admin",{
     image:{
         type:String,
-        required:true,
-        unique:true
+        require:true,
     },
     video:{
         type:String,
-        required:true,
-        unique:true
+        require:true,
     },
     categorie:{
      type:String,
-     required:true
+     require:true
     }
 })
 module.exports = Admin

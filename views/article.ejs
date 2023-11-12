@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/inscription.css" />
   </head>
   <body>
-    <form class="card" method="post" action="/admin/article">
+    <form class="card" method="post" action="/admin/article" enctype="multipart/form-data">
 
       <div class="croix">
         <a href="/utilisateur"
@@ -21,7 +21,7 @@
         <h1>Ajourt Article</h1>
         <p style="margin-bottom: 30px" class="pp">
           
-          <input type="file" name="image" id="image" placeholder=" entrer l'image" required />
+          <input type="file" name="image" id="image" placeholder=" entrer l'image"  />
         </p>
         <p style="margin-bottom: 30px" class="pp">
          
@@ -32,7 +32,7 @@
           <select name="categorie" id="categorie">
             <option value="histoire">histoire</option>
             <option value="meditation">meditation</option>
-            <option value="histoire">animé</option>
+            <option value="animé">animé</option>
           </select>
         
         </p>

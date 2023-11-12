@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title></title>
     <link rel="stylesheet" href="/stylesheets/meditation.css" />
    
 
@@ -23,101 +23,32 @@
     <div class="section1">
       <div class="card"></div>
     </div>
-
-    <div class="container">
+    <% if (articles) { %>
       <h1>video gallery</h1>
-      <input type="checkbox" id="click" />
-      <input type="checkbox" id="click1" />
-      <input type="checkbox" id="click2" />
-      <input type="checkbox" id="click3" />
-      <input type="checkbox" id="click4" />
-      <input type="checkbox" id="click5" />
-
-      <div class="video-container">
-        <label for="click" class="video">
-          <img src="../image/medi1.PNG" alt="" />
-        </label>
-        <label for="click1" class="video">
-          <img src="../image/medi7.PNG" alt="" />
-        </label>
-        <label for="click2" class="video">
-          <img src="../image/medi9.PNG" alt="" />
-        </label>
-        <label for="click3" class="video">
-          <img src="../image/medi3.PNG" alt="" />
-        </label>
-        <label for="click4" class="video">
-          <img src="../image/medi5.PNG" alt="" />
-        </label>
-        <label for="click5" class="video">
-          <img src="../image/medi8.PNG" alt="" />
-        </label>
+      <div class="container">
+        
+        <% articles.forEach(function(article,index){ %>
+          <% if (article.categorie === "meditation") { %>
+        
+        <input type="checkbox" id="click<%= index %>" />
+           
+        
+    
+            <div class="video-container">
+              <label for="click<%= index %>" class="video">
+                <img src="<%= article.image.replace(/\\/g, '/') %>" alt="" />
+              </label>
+            </div>
+            <div class="popup-video">
+              <video src="<%= article.video.replace(/\\/g, '/') %>" controls muted controlslist="nodownload nofullscreen"></video>
+              <label class="yo" for="click<%= index %>">&times;</label>
+            </div>
+    
+            <% } %> <!-- Ajout de cette accolade fermante -->
+            <% }) %>
       </div>
-
-      <div class="popup-video">
-        <video
-          src="../video/medit1.mp4"
-          controls
-          muted
-          controlslist=" nodownload nofullscreen "
-        ></video>
-
-        <label class="yo" for="click">&times;</label>
-      </div>
-
-      <div class="popup-video1">
-        <video
-          src="../video/medit7.mp4"
-          controls
-          muted
-          controlslist=" nodownload nofullscreen "
-        ></video>
-
-        <label class="yo" for="click1">&times;</label>
-      </div>
-
-      <div class="popup-video2">
-        <video
-          src="../video/medit9.mp4"
-          controls
-          muted
-          controlslist=" nodownload nofullscreen "
-        ></video>
-
-        <label class="yo" for="click2">&times;</label>
-      </div>
-
-      <div class="popup-video3">
-        <video
-          src="../video/medit3.mp4"
-          controls
-          muted
-          controlslist=" nodownload nofullscreen "
-        ></video>
-
-        <label class="yo" for="click3">&times;</label>
-      </div>
-      <div class="popup-video4">
-        <video
-          src="../video/medit5.mp4"
-          controls
-          muted
-          controlslist=" nodownload nofullscreen "
-        ></video>
-
-        <label class="yo" for="click4">&times;</label>
-      </div>
-      <div class="popup-video5">
-        <video
-          src="../video/medit8.mp4"
-          controls
-          muted
-          controlslist=" nodownload nofullscreen "
-        ></video>
-
-        <label class="yo" for="click5">&times;</label>
-      </div>
-    </div>
+     
+    <% } %>
     <!-- fin de la premiere partie -->
 
 
