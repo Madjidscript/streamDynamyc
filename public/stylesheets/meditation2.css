@@ -81,21 +81,23 @@ p {
   height: 100%;
   width: 100%;
   display: block;
-  opacity: 0;
-  visibility: hidden;
+  margin: 0px auto;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 
-#click:checked ~ .popup-video {
+/* #click:checked ~ .popup-video {
   opacity: 1;
   visibility: visible;
-}
+} */
 
 
 
 .container .popup-video video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  
+  /* left: 50%;
+  top: 50%; */
+  margin: 0px auto;
   transform: translate(-50%, -50%);
   width: 69%;
   border: 3px solid white;
@@ -110,6 +112,7 @@ p {
   color: white;
   z-index: 100;
   cursor: pointer;
+  display: none;
 }
 @media (max-width: 768px) {
   .container .popup-video video {

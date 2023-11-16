@@ -23,23 +23,18 @@
       <div class="card"></div>
     </div>
     <% if (articles) { %>
-      <h1>video gallery</h1>
-      <div class="container">
-        
-        <% articles.forEach(function(article){ %>
-          <% if (article.categorie === "meditation") { %>
-        
-            <div class="video-container">
-              <a href="/detail2/<%= article._id %>" class="video"> 
-                <img src="<%= article.image.replace(/\\/g, '/') %>" alt="" />
-              </a>
-            </div>
-           
+    <h1>video gallery</h1>
+    <div class="container">
+      
     
-            <% } %> <!-- Ajout de cette accolade fermante -->
-            <% }) %>
+      <div class="popup-video">
+        <video src="/<%= articles.video.replace(/\\/g, '/') %>" controls muted autoplay></video>
+        <a href="/meditation" class="yo">&times;</a>
       </div>
-     
+
+    </div>
+    <!-- fin de la premiere partie -->
+    
     <% } %>
     <!-- debut footer -->
 

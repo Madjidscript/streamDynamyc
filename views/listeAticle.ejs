@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/article.css">
+    <title>Document</title>
+</head>
+<body>
+  <%- include('partials/hearder3') %>
+  <% if (articles) { %>
+    <h2>Tableau des Articles</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom Image</th>
+        <th>Non Video</th>
+        <th>Non Categorie</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <% articles.forEach(function(article){ %>
+    <tbody>
+      <tr>
+        <td><%=article._id %></td>
+        <td><%=article.image %></td>
+        <td><%=article.video %></td>
+        <td><%=article.categorie %></td>
+        <td>
+          <form method="post" action="/admin/delete2/<%= article._id %>" style="display: inline;">
+            <button class="button-delete" type="submit" >Supprimer</button>
+          </form>
+          <a href="/admin/update/<%= article._id %>" class="button-edit">Modifier</a>
+        </td>
+      </tr>
+      <!-- Ajoutez d'autres lignes selon vos besoins -->
+    </tbody>
+    <% }) %>
+  </table>
+  <% } %>
+
+  
+  <script src="/javascripts/article.js"></script>
+</body>
+</html>

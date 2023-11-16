@@ -219,6 +219,33 @@ static meditation2 =async(req=request,res=response)=>{
      return res.render('meditation2',{'users':user,"articles":article})
      
 }
+static detail2 =async(req=request,res=response)=>{
+    const token = req.cookies.streamok //cette partie  nous permet dappeller notre cookie qui a pour non streamok
+    const verifToken = jsonwt.VerifierToken(token)
+    console.log("ma verification",verifToken);
+      
+      const id = verifToken.id
+       console.log("je verifie",id);
+      const user =await User.findById(id).exec()
+     console.log("mon ami pour la vie",user);
+     console.log("mon vrai non",user.name);
+     const ids = req.params.id
+     const article = await Admin.findById(ids).exec()
+     console.log("mon vrai article",article)
+     
+     return res.render('detail2',{'users':user,"articles":article})
+     
+}
+static detail1 =async(req=request,res=response)=>{
+    const id = req.params.id
+    try {
+     const article = await Admin.findById(id).exec()
+     console.log("mon vrai article",article)
+     res.render("detail1",{articles:article})
+    } catch (error) {
+     console.log(error);
+    }
+ }
 static deconnexion =(req=request,res=response)=>{
     console.log("papapapppa");
     res.clearCookie("streamok")

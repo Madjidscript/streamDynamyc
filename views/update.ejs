@@ -3,38 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title></title>
     <link rel="stylesheet" href="/stylesheets/inscription.css" />
   </head>
   <body>
-    <form class="card" method="post" action="/update">
+    <%- include('partials/hearder3') %>
 
-      <div class="croix">
-        <a href="/utilisateur"
-          ><img
-            src="/images/ferme1.png"
-            alt=""
-            style="filter: invert(); width: 40px; height: 40px"
-        /></a>
-      </div>
+    <% if (articles) { %>
+    <form class="card" method="post" action="/admin/update/<%= articles._id %>">
+
+      
       <div class="cards">
-        <h1>Ajourt Article</h1>
+        <h1>MOdifier Article</h1>
         <p style="margin-bottom: 30px" class="pp">
           
-          <input type="file" name="image" id="image" value="" placeholder=" entrer l'image" required />
+          <input type="file" name="image" id="image" value="<%=articles.image %>" placeholder=" entrer l'image" required />
         </p>
         <p style="margin-bottom: 30px" class="pp">
          
-          <input type="file" name="video" id="video" value="" placeholder="entrer la video" required />
+          <input type="file" name="video" id="video" value="<%=articles.video %>" placeholder="entrer la video" required />
         </p>
         <p style="margin-bottom: 10px" class="pp">
           
-          <select name="categorie" id="categorie">
+          <select name="categorie" id="categorie" >
             <option value="histoire">histoire</option>
             <option value="meditation">meditation</option>
             <option value="histoire">animé</option>
           </select>
-          />
+          
         </p>
         <span><input type="checkbox" /></span>
         <span>J'ai lu,jaccepte <a href="">les termes & conditions</a></span>
@@ -44,5 +40,6 @@
         </p>
       </div>
     </form>
+    <% } %>
   </body>
 </html>

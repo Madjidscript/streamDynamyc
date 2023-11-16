@@ -112,8 +112,8 @@
       <div class="box1" style="background-color: white">
         <% let articleLenght1 = 0 %>
         <% articles.forEach(function(article)  { %>
-         <% if ((article.categorie ==="animé" ||article.categorie ==="meditation" ||article.categorie ==="histoire") && articleLenght1<15 ) { %>
-        <a href="/filmsserie2" class="papa"
+         <% if (article.categorie ==="animé"  && articleLenght1<15 ) { %>
+        <a href="/anime2" class="papa"
           ><div
             class="card1"
             style="background-image: url('<%= article.image.replace(/\\/g, '/') %>')"
@@ -130,7 +130,52 @@
         <%  articleLenght1 ++ %>
         <% } %>
         <% }) %>
-      </div>
+      
+      
+        <% let articleLenght2 = 0 %>
+        <% articles.forEach(function(article)  { %>
+         <% if (article.categorie ==="histoire" && articleLenght2<15 ) { %>
+        <a href="/filmsserie2" class="papa"
+          ><div
+            class="card1"
+            style="background-image: url('<%= article.image.replace(/\\/g, '/') %>')"
+          >
+            <p><%= article.categorie %></p>
+            <div class="icon">
+              <img
+                src="/images/plays.svg"
+                alt=""
+                style="width: 100%; height: 100%; filter: invert()"
+              />
+            </div></div
+        ></a>
+        <%  articleLenght2 ++ %>
+        <% } %>
+        <% }) %>
+     
+      
+        <% let articleLenght3 = 0 %>
+        <% articles.forEach(function(article)  { %>
+         <% if (article.categorie ==="meditation" && articleLenght3<15 ) { %>
+        <a href="/meditation2" class="papa"
+          ><div
+            class="card1"
+            style="background-image: url('<%= article.image.replace(/\\/g, '/') %>')"
+          >
+            <p><%= article.categorie %></p>
+            <div class="icon">
+              <img
+                src="/images/plays.svg"
+                alt=""
+                style="width: 100%; height: 100%; filter: invert()"
+              />
+            </div></div
+        ></a>
+        <%  articleLenght3 ++ %>
+        <% } %>
+        <% }) %>
+      
+    </div>
       
       
       <% } %>

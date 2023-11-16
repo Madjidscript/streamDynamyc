@@ -7,16 +7,12 @@
     <link rel="stylesheet" href="/stylesheets/inscription.css" />
   </head>
   <body>
+    <%- include('partials/hearder3') %>
+
+
     <form class="card" method="post" action="/admin/article" enctype="multipart/form-data">
 
-      <div class="croix">
-        <a href="/utilisateur"
-          ><img
-            src="/images/ferme1.png"
-            alt=""
-            style="filter: invert(); width: 40px; height: 40px"
-        /></a>
-      </div>
+      
       <div class="cards">
         <h1>Ajourt Article</h1>
         <p style="margin-bottom: 30px" class="pp">
@@ -44,5 +40,7 @@
         </p>
       </div>
     </form>
+
+    <%- include('partials/footer') %>
   </body>
 </html>

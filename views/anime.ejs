@@ -14,51 +14,39 @@
     />
   </head>
   <body>
-    <%- include('partials/hearder1') %>
-    <!-- fin bar de navigation -->
-
-
-    <!-- debut de la premiere partie -->
-    <div class="section1">
-      <div class="card"></div>
-    </div>
-   <% if(articles){ %>
-    <h1>video gallery</h1>
-    <div class="container">
-      
-      <input type="checkbox" id="click" />
-      <% articles.forEach(function(article){ %>
-        <% if(article.categorie ==="animé") { %>
-       
-      
-
-      <div class="video-container">
-        <label for="click" class="video">
-          <img src="<%=article.image.replace(/\\/g , '/')%>" alt="" />
-        </label>
-       
+    <body>
+      <%- include('partials/hearder1') %>
+      <!-- fin bar de navigation -->
+  
+  
+      <!-- debut de la premiere partie -->
+      <div class="section1">
+        <div class="card"></div>
       </div>
-
-      <div class="popup-video">
-        <video
-          src="<%=article.video.replace(/\\/g , '/')%>"
-          controls
-          muted
-          controlslist=" nodownload nofullscreen "
-        ></video>
-
-        <label class="yo" for="click">&times;</label>
-      </div>
+      <% if (articles) { %>
+        <h1>video gallery</h1>
+        <div class="container">
+          
+          <% articles.forEach(function(article){ %>
+            <% if (article.categorie === "animé") { %>
+          
+              <div class="video-container">
+                <a href="/detail1/<%= article._id %>" class="video"> 
+                  <img src="<%= article.image.replace(/\\/g, '/') %>" alt="" />
+                </a>
+              </div>
+             
+      
+              <% } %> <!-- Ajout de cette accolade fermante -->
+              <% }) %>
+        </div>
+       
       <% } %>
-      <% }) %>
-    </div>
-    
-    <% } %>
-    <!-- fin de la premiere partie -->
-
-
-    <!-- debut footer -->
-    <%- include('partials/footer') %>
-    <!-- debut footer -->
+      <!-- fin de la premiere partie -->
+  
+  
+      <!-- debut footer -->
+      <%- include('partials/footer') %>
+      <!-- debut footer -->
   </body>
 </html>

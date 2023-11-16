@@ -31,7 +31,7 @@ p {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.container h1 {
+ h1 {
   color: #26a65b;
   text-align: center;
   padding: 15px;
@@ -244,6 +244,7 @@ p {
   color: white;
   z-index: 100;
   cursor: pointer;
+  display: none;
 }
 @media (max-width: 768px) {
   .container .popup-video video {

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/utilisateur.css">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/hearder3') %>
+    <h2>Tableau des Utilisateurs</h2>
+    <% if (utilisateur) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <% utilisateur.forEach(function(client){ %>
+    <tbody>
+      <tr>
+        <td><%= client._id %></td>
+        <td><%= client.name %></td>
+        <td><%= client.email %></td>
+        <td>
+            <form method="post" action="/admin/delete1/<%= client._id %>" style="display: inline;">
+                <button class="button-delete" type="submit" >Supprimer</button>
+              </form>
+            
+        </td>
+      </tr>
+      <!-- Ajoutez d'autres lignes selon vos besoins -->
+    </tbody>
+    <% }) %>
+  </table>
+  <% } %>
+  
+  <script src="/javascripts/utilisateur.js"></script>
+</body>
+</html>

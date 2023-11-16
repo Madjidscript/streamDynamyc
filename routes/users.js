@@ -21,6 +21,8 @@ router.get('/meditation',controllerUser.meditation);
 router.get('/meditation2',jsonwt.requireAuth,controllerUser.meditation2);
 router.get('/filmsserie',controllerUser.filmsserie);
 router.get('/filmsserie2',jsonwt.requireAuth,controllerUser.filmsserie2);
+router.get('/detail2/:id',jsonwt.requireAuth,controllerUser.detail2);
+router.get('/detail1/:id',controllerUser.detail1);
 router.get('/deconnexion',controllerUser.deconnexion);
 
 

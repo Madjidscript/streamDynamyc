@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="/stylesheets/filmsserie2.css" />
+    <link rel="stylesheet" href="/stylesheets/filmsserie.css" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,29 +22,23 @@
       <div class="card"></div>
     </div>
     <% if (articles) { %>
-    <h1>video gallery</h1>
-    <div class="container">
-      <% articles.forEach(function(article){ %>
-        <% if (article.categorie === "histoire") { %>
-      <input type="checkbox" id="click" />
-      
-      <div class="video-container">
-        <label for="click" class="video">
-          <img src="<%= article.image.replace(/\\/g, '/') %>" alt="" />
-        </label>
-       
-      </div>
-
-      <div class="popup-video">
-        <video src="<%= article.video.replace(/\\/g, '/') %>" controls muted autoplay></video>
-        <label class="yo" for="click">&times;</label>
-      </div>
-
-      <% } %> <!-- Ajout de cette accolade fermante -->
-      <% }) %>
-    </div>
-    <!-- fin de la premiere partie -->
+      <h1>video gallery</h1>
+      <div class="container">
+        
+        <% articles.forEach(function(article){ %>
+          <% if (article.categorie === "meditation") { %>
+        
+            <div class="video-container">
+              <a href="/detail2/<%= article._id %>" class="video"> 
+                <img src="<%= article.image.replace(/\\/g, '/') %>" alt="" />
+              </a>
+            </div>
+           
     
+            <% } %> <!-- Ajout de cette accolade fermante -->
+            <% }) %>
+      </div>
+     
     <% } %>
     <!-- debut footer -->
 
