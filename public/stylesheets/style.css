@@ -94,7 +94,7 @@ body {
 .section2 {
   width: 100%;
   height: auto;
-  /* background-color: yellow; */
+  
   display: block;
   margin-bottom: 30px;
 }
@@ -103,7 +103,7 @@ body {
   height: auto;
   border-radius: 30px;
   margin-top: 20px;
-  /* background-color: red; */
+  
   position: relative;
   padding: 10px 20px;
   display: flex;
