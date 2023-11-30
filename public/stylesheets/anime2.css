@@ -31,12 +31,14 @@ p {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
  h1 {
   color: #26a65b;
   text-align: center;
   padding: 15px;
   font-size: 40px;
   font-weight: normal;
+  background-color: white;
 }
 .container .video-container {
   display: flex;
@@ -48,7 +50,7 @@ p {
 .container .video-container .video {
   height: 250px;
   width: 350px;
-  border: 5px solid #26a65b;
+  border: 5px solid#26a65b;
   border-radius: 5px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
   cursor: pointer;
@@ -67,40 +69,10 @@ p {
 #click {
   display: none;
 }
-#click1 {
-  display: none;
-}
-#click2 {
-  display: none;
-}
-#click3 {
-  display: none;
-}
-#click4 {
-  display: none;
-}
-#click5 {
-  display: none;
-}
-#click6 {
-  display: none;
-}
-#click7 {
-  display: none;
-}
-#click8 {
-  display: none;
-}
 
-.container .popup-video,
-.popup-video1,
-.popup-video2,
-.popup-video3,
-.popup-video4,
-.popup-video5,
-.popup-video6,
-.popup-video7,
-.popup-video8 {
+
+.container .popup-video
+ {
   position: fixed;
   top: 0px;
   left: 0px;
@@ -109,127 +81,23 @@ p {
   height: 100%;
   width: 100%;
   display: block;
-  opacity: 0;
-  visibility: hidden;
+  margin: 0px auto;
+  /* opacity: 0;
+  visibility: hidden; */
 }
 
-#click:checked ~ .popup-video {
+/* #click:checked ~ .popup-video {
   opacity: 1;
   visibility: visible;
-}
+} */
 
-#click1:checked ~ .popup-video1 {
-  opacity: 1;
-  visibility: visible;
-}
-#click2:checked ~ .popup-video2 {
-  opacity: 1;
-  visibility: visible;
-}
-#click3:checked ~ .popup-video3 {
-  opacity: 1;
-  visibility: visible;
-}
-#click4:checked ~ .popup-video4 {
-  opacity: 1;
-  visibility: visible;
-}
-#click5:checked ~ .popup-video5 {
-  opacity: 1;
-  visibility: visible;
-}
-#click6:checked ~ .popup-video6 {
-  opacity: 1;
-  visibility: visible;
-}
-#click7:checked ~ .popup-video7 {
-  opacity: 1;
-  visibility: visible;
-}
 
-#click8:checked ~ .popup-video8 {
-  opacity: 1;
-  visibility: visible;
-}
 
 .container .popup-video video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-.container .popup-video1 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-.container .popup-video2 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-.container .popup-video3 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-.container .popup-video4 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-.container .popup-video5 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-.container .popup-video6 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-
-.container .popup-video7 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
-  border: 3px solid white;
-  object-fit: cover;
-}
-
-.container .popup-video8 video {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  
+  /* left: 50%;
+  top: 50%; */
+  margin: 0px auto;
   transform: translate(-50%, -50%);
   width: 69%;
   border: 3px solid white;

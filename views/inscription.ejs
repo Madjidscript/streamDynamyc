@@ -10,7 +10,7 @@
     <form class="card" method="post" action="/inscription">
 
       <div class="croix">
-        <a href="/indexs"
+        <a href="/"
           ><img
             src="/images/ferme1.png"
             alt=""
@@ -19,6 +19,9 @@
       </div>
       <div class="cards">
         <h1>Inscription</h1>
+        <% if( typeof message1 !== "undefined" && message1 ) { %>
+          <p><%= message1 %></p>
+          <% } %>
         <p style="margin-bottom: 30px" class="pp">
           <img
             src="/images/372902_user_name_round_username_linecon_icon.png"

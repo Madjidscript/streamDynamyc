@@ -43,6 +43,7 @@ p {
   background-color: white;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
  h1 {
   color: #26a65b;
@@ -80,10 +81,12 @@ p {
 .container .video-container .video:hover img {
   transform: scale(1.1);
 }
+/* #click {
+  display: none;
+} */
 
 
-
-.container .popup-video{
+.container .popup-video {
   position: fixed;
   top: 70px;
   left: 0px;
@@ -95,6 +98,10 @@ p {
   
 }
 
+/* #click:checked ~ .popup-video {
+  opacity: 1;
+  visibility: visible;
+} */
 
 
 
@@ -103,10 +110,11 @@ p {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 68%;
+  width:69%;
   border: 3px solid white;
   object-fit: cover;
 }
+
 
 .yo {
   position: absolute;

@@ -8,6 +8,7 @@ footer {
   height: auto;
   background-color: black;
   display: flex;
+  color: white;
   flex-direction: column;
   border-top-left-radius: 125px;
   bottom: 0px;

@@ -13,7 +13,7 @@ router.post('/connexion',controllerUser.connexionPost);
 router.get('/profil/:id',jsonwt.requireAuth,controllerUser.profil);
 router.get('/editer/:id',jsonwt.requireAuth,controllerUser.editer);
 router.post('/editer/:id',jsonwt.requireAuth,controllerUser.editerPost);
-router.get('/indexs',controllerUser.indexs);
+router.get('/',controllerUser.indexs);
 router.get('/index2',jsonwt.requireAuth,controllerUser.index2);
 router.get('/anime',controllerUser.anime);
 router.get('/anime2',jsonwt.requireAuth,controllerUser.anime2);
@@ -24,6 +24,15 @@ router.get('/filmsserie2',jsonwt.requireAuth,controllerUser.filmsserie2);
 router.get('/detail2/:id',jsonwt.requireAuth,controllerUser.detail2);
 router.get('/detail1/:id',controllerUser.detail1);
 router.get('/deconnexion',controllerUser.deconnexion);
+//mes texte hooooooàààoooooooooooooooooooooooooooooooooooooooooooooooooooooo
+router.get('/texte',controllerUser.texte);
+router.get('/texte1/:id',controllerUser.texte1);
+router.delete('/texte3/:id',controllerUser.texte3);
+router.put('/texte4/:id',controllerUser.texte4);
+router.get('/texte2',controllerUser.texte2);
+router.post('/inscription2',controllerUser.inscription2);
+
+
 
 
 

@@ -3,6 +3,7 @@
  const bcrypt = require("bcrypt")
 const {response,request}= require('express');
 const jsonwt = require("../middlewares/jwtoken");
+const otherUser = require("../other/user");
 
 
 
@@ -43,12 +44,12 @@ static connexionPost = async(req=request,res= response)=>{
 try {
     const user = await User.findOne({email})
     if (!user) {
-      return  res.render('connexion',{message:"l'email nexiste pas"})
+      return  res.render('connexion',{message2:"l'email nexiste pas"})
     }
     const verifPasswor =await bcrypt.compare(password,user.password)
     console.log(password,"mon pass",user.password);
     if (!verifPasswor) {
-    return  res.render('connexion',{message:'mots de pass incorrect'})
+    return  res.render('connexion',{message3:'mots de pass incorrect'})
     } else if(verifPasswor){
         const token = jsonwt.CreerToken(user._id)
         res.cookie('streamok',token)
@@ -252,7 +253,68 @@ static deconnexion =(req=request,res=response)=>{
     res.redirect('/connexion')
 }
 
+//mes texte hooooooooooooooooooooooooooooooooooooooooooo
 
+static texte =(req=request,res=response)=>{
+    const affiche = otherUser.afficheTout()
+    console.log("monafichage wesh",affiche)
+    res.render("texte",{"affiches":affiche})
+}
+ static texte1 = async(req= request,res=response)=>{
+    const id =req.params.id
+    const uniqueUtilisateur = await otherUser.utilisarteuParID(id)
+    console.log("mon unique utilisateur", uniqueUtilisateur);
+    res.send({"affiches":uniqueUtilisateur})
+ }
+ static texte2 = async (req=request,res =response)=>{
+    const email = req.body.email
+    const utilisateurParMail = await otherUser.utilisateurParEmail(email)
+    console.log('mon utilisateur par mail',utilisateurParMail);
+    res.send({"affiches":utilisateurParMail})
+ }
+ static inscription2 = async(req=request,res=response)=>{
+    const email = req.body.email
+    const password =req.body.password
+    const verifemail = await otherUser.utilisateurParEmail(email)
+    console.log("mon email",verifemail);
+    if(verifemail){
+        res.send({"ereur1":"utilisateur existe"})
+    }
+    const hashepwd = await bcrypt.hash(password,10)
+    const data =(  {
+        name:req.body.name,
+        email:req.body.email,
+        password:hashepwd,
+        statut:req.body.statut
+    })
+    const enregistrer = await otherUser.inscription(data)
+    console.log("mon utilisateur inscrit",enregistrer);
+    res.send({'utilisateur':enregistrer})
+ }
+
+ static texte3 = async(req= request,res=response)=>{
+    const id =req.params.id
+    const uniqueUtilisateurs = await otherUser.suppression(id)
+    console.log("mon unique utilisateur", uniqueUtilisateurs);
+    res.send({"affiches":uniqueUtilisateurs})
+ }
+
+ static texte4 = async(req= request,res=response)=>{
+    const id =req.params.id
+    const password = await req.body.password
+    const hashepwd = await bcrypt.hash(password,10)
+    const data = {
+        name:req.body.name,
+        email:req.body.email,
+        password:hashepwd,
+        statut:req.body.statut
+
+    }
+    console.log("mes doner",id,data);
+    const uniqueUtilisateur = await otherUser.update(id,data,{new:true})
+     console.log("mon unique utilisateur", uniqueUtilisateur);
+    res.send({"affiches":uniqueUtilisateur})
+ }
 
 
 

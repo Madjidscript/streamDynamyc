@@ -34,7 +34,7 @@ static article = async(req=request,res=response)=>{
         })
         try {
             const saveArticle = createArticle.save()
-            res.status(201).render('article')
+            res.status(201).redirect('/admin/article')
         } catch (error) {
             console.log("erreur1 article",error)
         }
